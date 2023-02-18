@@ -2,13 +2,15 @@
 
 # dependencies
 /node_modules
+/
 /.pnp
 .pnp.js
 
 .prettierrc
 .prettierignore
 .package-lock.json
-
+favicon.ico
+/public/*.png
 
 # testing
 /coverage

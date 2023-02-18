@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import AddForm from './AddForm'
 import './TodoApp.css'
+import './TodoList'
+import TodoList from './TodoList/'
 
 function TodoApp() {
   //文字輸入匡用
@@ -25,10 +28,19 @@ function TodoApp() {
       return v.id !== id
     })
   }
+  const addTodo = (todos, todo) => {
+    return [todo, ...todos]
+  }
+  //專門給AddForm.js用的，並非上面的純粹化函式
+  const handleAddTodo = (newTodo) => {
+    setTodos(addTodo(todos, newTodo))
+  }
+
   return (
     <>
       <h1>代辦事項</h1>
-      <input
+      <AddForm handleAddTodo={handleAddTodo} />
+      {/* <input
         type="text"
         value={inputValue}
         onChange={(e) => {
@@ -41,15 +53,21 @@ function TodoApp() {
             // 2. id是數字時，可求出最大值再遞增(類似資料庫中的auto increment)
             // 3. 隨機產生語法或函式庫 例如 uuid/nanoid 等函式庫
             const newTodo = { id: Number(new Date()), text: inputValue }
-            setTodos([newTodo, ...todos])
+            setTodos(addTodo(todos, newTodo))
 
             //清空輸入匡
             setInputValue('')
           } //按下enter件
         }}
-      />
+      /> */}
       <hr />
-      <ul>
+      <TodoList
+        todos={todos}
+        toggleCompleted={toggleCompleted}
+        setTodos={setTodos}
+        deleteTodo={deleteTodo}
+      />
+      {/* <ul>
         {todos.map((v, i) => {
           return (
             <li key={v.id} className={v.completed ? 'completed' : 'active'}>
@@ -71,8 +89,9 @@ function TodoApp() {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
     </>
   )
 }
+
 export default TodoApp

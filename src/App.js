@@ -13,7 +13,15 @@
 // import Child from './0210/01.props/Child'
 // import Parent from './0210/01.props/Parent'
 // import Parent from './0210/02.props/Parent'
-import TodoApp from './0210/03.todo/TodoApp'
+// import TodoApp from './0210/03.todo/TodoApp'
+// import TodoApp from './0214/01.todo/TodoApp'
+// import GrandParent from './0214/02.context/GrandParent'
+// import GrandParent from './0214/03.context-hook/GrandParent'
+// import BMI from './0214/04.BMI/BMI'
+import HTML5form from './0215/1.form/HTML5form'
+// import IdForm from './0215/2.ref/IdForm'
+// import RefsForm from './0215/2.ref/RefsForm'
+// import RegisterForm from './0215/03.form/RegisterForm'
 // import {
 //   purePush,
 //   pureUnshift,
@@ -24,7 +32,14 @@ function App() {
   return (
     <>
       {/* {<Child />} */}
-      {<TodoApp />}
+      {/* <GrandParent /> */}
+      {/* <RegisterForm /> */}
+      {/* <RefsForm /> */}
+      {/* <IdForm /> */}
+      <HTML5form />
+      {/* <BMI /> */}
+      {/* <GrandParent /> */}
+      {/* {<TodoApp />} */}
       {/* {<Parent />} */}
       {/* {<ShoppingCart2 />} */}
       {/* {<ShoppingCart />} */}
